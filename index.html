@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#ffd7e7" />
+<title>loegunn sakura travel 2026</title>
+<style>
+:root {
+  --bg: #fff8fc;
+  --bg-2: #fff2f7;
+  --panel: rgba(255,255,255,0.9);
+  --panel-2: #fff4f8;
+  --text: #5d3850;
+  --muted: #8d6c7d;
+  --line: rgba(228, 178, 201, 0.35);
+  --brand: #f9d7e6;
+  --brand-2: #ffe8f1;
+  --accent: #e98fb8;
+  --accent-2: #f6b3cf;
+  --good: #d96a9d;
+  --shadow: 0 18px 38px rgba(230, 157, 194, .18);
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "PingFang HK",
+    "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 10% 6%, rgba(255,220,236,.92), transparent 22%),
+    radial-gradient(circle at 95% 0%, rgba(255,236,244,.95), transparent 24%),
+    linear-gradient(180deg, #fffafc 0%, #fff5f9 45%, #fff9fb 100%);
+}
+body::before {
+  content: "✿ ✿ ✿";
+  position: fixed;
+  right: 10px;
+  top: 16px;
+  color: rgba(233,143,184,.28);
+  font-size: 18px;
+  letter-spacing: 8px;
+  pointer-events: none;
+  transform: rotate(12deg);
+}
+a { color: inherit; text-decoration: none; }
+button, input { font: inherit; }
+
+.app {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-bottom: 110px;
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 248, 252, .78);
+  border-bottom: 1px solid var(--line);
+  padding: calc(env(safe-area-inset-top) + 14px) 16px 12px;
+}
+.row {
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.logo {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border-radius:999px;
+  background: rgba(255,255,255,.8);
+  border:1px solid var(--line);
+  font-size:12px; font-weight:700;
+}
+.title {
+  font-size: 22px; font-weight: 900; letter-spacing: .2px;
+}
+.subtitle { color: var(--muted); font-size: 12px; margin-top: 4px; }
+.chip {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:8px 12px; border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.7);
+  font-size: 12px; color: var(--muted);
+}
+.hero { padding: 18px 16px 8px; }
+.hero-card {
+  position: relative; overflow:hidden;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,240,247,.95)),
+    linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.9));
+  border:1px solid var(--line);
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+.hero-card::after {
+  content:"";
+  position:absolute;
+  width:180px; height:180px; right:-40px; top:-48px;
+  background: radial-gradient(circle, rgba(249,215,230,.9), transparent 65%);
+}
+.badge {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border-radius:999px;
+  background: rgba(249,215,230,.52);
+  color: #8a4969;
+  font-size:12px; font-weight:700;
+  border:1px solid rgba(233,143,184,.22);
+}
+.hero h1 {
+  margin: 14px 0 8px;
+  font-size: clamp(26px, 4vw, 40px);
+  line-height: 1.08;
+}
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 760px;
+}
+.stats {
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 12px;
+}
+.stat {
+  background: rgba(255,255,255,.72);
+  border:1px solid var(--line);
+  border-radius: 20px;
+  padding: 14px 12px;
+}
+.stat .num { font-size: 22px; font-weight: 900; }
+.stat .lab { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.quick-actions {
+  display:flex; flex-wrap:wrap; gap:10px;
+  margin-top: 16px;
+}
+.btn {
+  appearance:none; border:none; cursor:pointer;
+  border-radius: 16px;
+  padding: 12px 16px;
+  font-weight: 800;
+  color: #7b3758;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  border: 1px solid rgba(233,143,184,.22);
+  box-shadow: 0 10px 20px rgba(233,143,184,.15);
+}
+.btn.secondary {
+  background: rgba(255,255,255,.72);
+  color: var(--text);
+}
+.section { padding: 16px; }
+.section-title { font-size: 24px; font-weight: 900; }
+.section-sub { font-size: 13px; color: var(--muted); line-height: 1.55; margin-top: 4px; }
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+}
+.grid-2 { display:grid; grid-template-columns: 1.15fr .85fr; gap: 16px; }
+.grid-3 { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.grid-4 { display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.tools-grid { display:grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 12px; }
+.tool-card, .route-card, .info-card, .phrase-card, .packing-item, .photo-card {
+  padding: 14px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+.label { color: var(--muted); font-size: 12px; }
+.value { margin-top: 6px; font-size: 15px; font-weight: 800; line-height: 1.45; }
+.small { color: var(--muted); font-size: 12px; line-height: 1.5; }
+.soft {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:6px 10px; border-radius:999px;
+  background: rgba(249,215,230,.36);
+  color: #925374; font-size: 11px; border: 1px solid rgba(233,143,184,.18);
+}
+.search-box {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 14px 14px;
+  outline: none;
+  color: var(--text);
+}
+.day-tabs {
+  display:flex; gap:10px; overflow:auto; padding-bottom: 4px; margin-top: 12px;
+}
+.day-tab {
+  min-width: 132px;
+  padding: 12px;
+  border-radius: 18px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.75);
+  cursor: pointer;
+  text-align:left;
+}
+.day-tab.active {
+  background: linear-gradient(135deg, rgba(249,215,230,.72), rgba(255,242,247,.95));
+  box-shadow: inset 0 0 0 1px rgba(233,143,184,.15);
+}
+.day-tab .date { color: var(--muted); font-size: 12px; }
+.day-tab .name { margin-top: 6px; font-weight: 800; line-height: 1.3; }
+.route-list, .timeline, .phrase-groups, .pack-grid, .photo-list {
+  display:grid; gap: 12px;
+}
+.route-card .top, .it-head {
+  display:flex; justify-content:space-between; gap:10px; align-items:flex-start;
+}
+.route-name { font-size: 16px; font-weight: 900; }
+.route-line {
+  margin-top: 8px;
+  display:flex; flex-wrap:wrap; gap:8px;
+}
+.tag {
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 7px 10px; border-radius: 999px;
+  background: #fff6fa; border: 1px solid var(--line); font-size: 11px; color: #8a4a6b;
+}
+.route-actions, .item-actions {
+  display:flex; flex-wrap:wrap; gap:8px; margin-top: 12px;
+}
+.mini {
+  appearance:none; border:none; cursor:pointer;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: rgba(255,255,255,.9);
+  color: var(--text);
+  font-weight: 800;
+  border: 1px solid var(--line);
+}
+.mini.primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #7c3d5f;
+}
+.mini.active {
+  background: rgba(249,215,230,.6);
+}
+.station-hint {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #fff7fa;
+  border: 1px dashed rgba(233,143,184,.35);
+  color: #87546f;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.timeline {
+  position: relative;
+  margin-top: 14px;
+}
+.timeline::before {
+  content:"";
+  position:absolute;
+  left: 24px; top: 12px; bottom: 12px;
+  width:2px;
+  background: linear-gradient(180deg, rgba(233,143,184,.55), rgba(249,215,230,.2));
+}
+.item {
+  position:relative;
+  margin-left: 4px;
+  padding: 14px 14px 14px 54px;
+  background: rgba(255,255,255,.86);
+  border:1px solid var(--line);
+  border-radius: 20px;
+}
+.item::before {
+  content:"";
+  position:absolute;
+  left:14px; top:18px;
+  width:18px; height:18px; border-radius:50%;
+  background: linear-gradient(135deg, var(--accent), var(--brand));
+  box-shadow: 0 0 0 6px rgba(249,215,230,.32);
+}
+.item.done { opacity: .72; }
+.item.done .main-title { text-decoration: line-through; }
+.time { font-size: 12px; color: var(--good); font-weight: 800; }
+.main-title { margin-top: 3px; font-size: 16px; font-weight: 900; }
+.meta { margin-top: 4px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.checkbox {
+  display:flex; align-items:flex-start; gap:10px; cursor:pointer;
+}
+.checkbox input {
+  width: 18px; height: 18px; margin-top: 2px; accent-color: #e98fb8;
+}
+.name { font-weight: 800; }
+.progress {
+  height: 10px; border-radius: 999px; overflow:hidden;
+  background: #ffe8f1;
+}
+.progress span {
+  display:block; height:100%; width:0;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius:999px;
+}
+.filters {
+  display:flex; gap:8px; overflow:auto; margin-top: 12px;
+}
+.filter {
+  padding:8px 12px; border-radius:999px; cursor:pointer;
+  background:#fff; border:1px solid var(--line); font-size:12px;
+}
+.filter.active { background: rgba(249,215,230,.52); }
+.bottom-nav {
+  position: fixed;
+  left:50%; transform: translateX(-50%);
+  bottom: 12px; z-index: 60;
+  width: min(calc(100% - 24px), 760px);
+  display:grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+  padding: 8px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.78);
+  backdrop-filter: blur(18px);
+  border:1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.nav-btn {
+  appearance:none; border:none; cursor:pointer;
+  background: transparent; border-radius: 16px;
+  padding: 10px 6px;
+  color: var(--muted); display:grid; place-items:center; gap:4px;
+  font-size: 11px;
+}
+.nav-btn.active {
+  background: rgba(249,215,230,.46);
+  color: var(--text);
+}
+.toast {
+  position: fixed; bottom: 92px; left: 50%; transform: translateX(-50%) translateY(12px);
+  background: rgba(96, 53, 77, .95);
+  color: white; padding: 10px 14px;
+  border-radius: 999px; font-size: 12px; opacity: 0; transition: .25s ease; pointer-events:none;
+  z-index: 99;
+}
+.toast.show {
+  opacity: 1; transform: translateX(-50%) translateY(0);
+}
+.highlight { color: #c35088; font-weight: 900; }
+.hide { display:none !important; }
+
+
+/* editorial cover refresh */
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang HK",
+    "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
+  background:
+    radial-gradient(circle at 14% 10%, rgba(252, 228, 236, .9), transparent 22%),
+    radial-gradient(circle at 88% 8%, rgba(250, 238, 241, .95), transparent 24%),
+    linear-gradient(180deg, #fffdfc 0%, #fff8fa 45%, #fffdfc 100%);
+}
+body::before {
+  content: "";
+  right: auto;
+  left: -40px;
+  top: 110px;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  font-size: 0;
+  letter-spacing: 0;
+  transform: none;
+  background: radial-gradient(circle, rgba(239, 197, 212, .28), transparent 70%);
+}
+.topbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 251, 252, .78);
+  border-bottom: 1px solid rgba(221, 201, 209, .45);
+  padding: calc(env(safe-area-inset-top) + 12px) 16px 12px;
+}
+.logo {
+  background: rgba(255,255,255,.72);
+  border-radius: 999px;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: 10px;
+  color: #88656f;
+}
+.hero { padding: 14px 16px 6px; }
+.hero-card.cover-card {
+  border-radius: 34px;
+  padding: 28px 26px 22px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,247,250,.96)),
+    linear-gradient(135deg, rgba(255,240,246,.52), rgba(255,255,255,.3));
+  box-shadow: 0 24px 60px rgba(205, 161, 176, .16);
+  overflow: hidden;
+}
+.hero-card.cover-card::after {
+  width: 280px;
+  height: 280px;
+  right: -70px;
+  top: -72px;
+  background: radial-gradient(circle, rgba(245, 221, 228, .92), transparent 68%);
+}
+.hero-card.cover-card::before {
+  content: "";
+  position: absolute;
+  left: 34px;
+  top: 84px;
+  width: 80px;
+  height: 1px;
+  background: rgba(125, 103, 112, .28);
+}
+.cover-mini-top {
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.cover-kicker,
+.cover-location {
+  display:inline-flex;
+  align-items:center;
+  min-height: 28px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #8f6a77;
+}
+.cover-grid {
+  display:grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, .7fr);
+  gap: 22px;
+  align-items:end;
+  margin-top: 18px;
+}
+.cover-main {
+  max-width: 680px;
+}
+.cover-issue {
+  font-size: 14px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: #8e6875;
+  margin-bottom: 14px;
+}
+.hero .cover-main h1 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Baskerville", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: clamp(40px, 7vw, 74px);
+  line-height: .95;
+  letter-spacing: -.03em;
+  color: #352a2f;
+}
+.cover-date {
+  margin-top: 18px;
+  font-family: "Iowan Old Style", "Baskerville", Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 2.5vw, 28px);
+  color: #56454b;
+}
+.hero .cover-copy {
+  margin-top: 18px;
+  max-width: 520px;
+  color: #76656b;
+  line-height: 1.7;
+  font-size: 14px;
+}
+.cover-side {
+  display:grid;
+  gap: 10px;
+  padding: 18px 0 2px;
+}
+.cover-side-line {
+  padding-top: 10px;
+  border-top: 1px solid rgba(125, 103, 112, .18);
+  color: #7e6a71;
+  font-size: 12px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.cover-divider {
+  height: 1px;
+  margin: 24px 0 18px;
+  background: linear-gradient(90deg, rgba(125,103,112,.34), rgba(125,103,112,.12), transparent 72%);
+}
+.cover-stats {
+  margin-top: 0;
+}
+.cover-stats .stat {
+  background: rgba(255,255,255,.58);
+  border-radius: 20px;
+  box-shadow: none;
+}
+.cover-stats .num {
+  font-family: "Iowan Old Style", "Baskerville", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  color: #3e3137;
+}
+.cover-stats .lab {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 10px;
+  color: #8c717a;
+}
+.cover-actions {
+  margin-top: 16px;
+}
+.btn {
+  border-radius: 999px;
+  background: rgba(255,255,255,.78);
+  border: 1px solid rgba(221, 201, 209, .7);
+  box-shadow: none;
+  color: #5e4850;
+}
+.btn.secondary {
+  background: rgba(255,255,255,.52);
+}
+.section:first-of-type + .section .section-title,
+.section-title {
+  letter-spacing: -.02em;
+}
+.card {
+  box-shadow: 0 16px 36px rgba(213, 182, 193, .12);
+}
+@media (max-width: 900px) {
+  .cover-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .cover-side {
+    padding-top: 6px;
+  }
+  .hero-card.cover-card::before {
+    display:none;
+  }
+  .hero .cover-main h1 {
+    font-size: clamp(36px, 14vw, 56px);
+  }
+  .cover-date {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-2, .grid-3, .grid-4, .tools-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="row">
+      <div class="logo">special trip issue</div>
+      <div class="chip" id="countdownChip">旅程倒數中</div>
+    </div>
+  </header>
+
+  <section class="hero magazine-cover" id="home">
+    <div class="hero-card cover-card">
+      <div class="cover-mini-top">
+        <span class="cover-kicker">spring concert journey</span>
+        <span class="cover-location">Tokyo · Kokuritsu · Atami · Yokohama</span>
+      </div>
+
+      <div class="cover-grid">
+        <div class="cover-main">
+          <div class="cover-issue">loegunn sakura travel 2026</div>
+          <h1>Tokyo<br>Kokuritsu<br>Atami · Yokohama</h1>
+          <div class="cover-date">09—16 April 2026</div>
+          <p class="cover-copy">concert days at kokuritsu, seaside air in atami, and one last quiet night by the yokohama waterfront.</p>
+        </div>
+
+        <aside class="cover-side">
+          <div class="cover-side-line">sakurazaka anniversary trip</div>
+          <div class="cover-side-line">2 concert days · 3 hotel stays</div>
+          <div class="cover-side-line">maps, rail notes & daily planner below</div>
+          <div class="cover-side-line">tokyo / atami / yokohama</div>
+        </aside>
+      </div>
+
+      <div class="cover-divider"></div>
+
+      <div class="stats cover-stats">
+        <div class="stat"><div class="num" id="tripDays">0</div><div class="lab">days</div></div>
+        <div class="stat"><div class="num" id="spotCount">0</div><div class="lab">stops</div></div>
+        <div class="stat"><div class="num" id="routeCount">0</div><div class="lab">routes</div></div>
+        <div class="stat"><div class="num">2</div><div class="lab">concert days</div></div>
+      </div>
+
+      <div class="quick-actions cover-actions">
+        <button class="btn" onclick="jumpTo('transport')">每日交通</button>
+        <button class="btn secondary" onclick="jumpTo('itinerary')">每日行程</button>
+        <button class="btn secondary" onclick="window.open('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('国立競技場 東京'), '_blank')">新國立地圖</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="transport">
+    <div class="section-title">交通小幫手</div>
+    <div class="section-sub">先揀日期，再睇當日最關鍵嘅移動段落。Google Maps 係可直接跳去你嗰段路線；Jorudan、NAVITIME 同 JR 官方入口就放喺下面方便即查班次。</div>
+    <div class="card" style="padding:14px; margin-top:12px;">
+      <div id="transportTabs" class="day-tabs"></div>
+      <div id="transportSummary" class="small" style="margin-top:8px;"></div>
+      <div id="routeList" class="route-list" style="margin-top:14px;"></div>
+    </div>
+    <div class="card" style="padding:14px; margin-top:14px;">
+      <div class="section-title" style="font-size:18px;">查班次網站捷徑</div>
+      <div class="section-sub">想查 JR、地鐵、伊豆急行或者巴士，即刻由呢度開網站。</div>
+      <div id="toolsGrid" class="tools-grid" style="margin-top:12px;"></div>
+    </div>
+  </section>
+
+  <section class="section" id="itinerary">
+    <div class="grid-2">
+      <div>
+        <div class="section-title">每日行程</div>
+        <div class="section-sub">搜尋地點 / 活動 / 備註，並可逐項標記完成。</div>
+        <div class="card" style="padding:14px; margin-top:12px;">
+          <input id="searchInput" class="search-box" placeholder="搜尋地點 / 景點 / 備註，例如：六本木、Shibuya Sky、グッズ" />
+          <div id="itineraryTabs" class="day-tabs"></div>
+          <div id="daySummary" class="small" style="margin-top:8px;"></div>
+          <div id="timeline" class="timeline"></div>
+        </div>
+      </div>
+      <div style="display:grid; gap:16px;">
+        <div class="card" style="padding:14px;">
+          <div class="section-title" style="font-size:18px;">快速定位卡</div>
+          <div class="section-sub">酒店、場館、機場，一按即開。</div>
+          <div id="quickCards" class="grid-2" style="margin-top:12px;"></div>
+        </div>
+        <div class="card" style="padding:14px;">
+          <div class="section-title" style="font-size:18px;">攝影提示</div>
+          <div class="section-sub">保留你原本旅程裏面嘅影相重點，出門前一眼快睇。</div>
+          <div id="photoPreview" class="photo-list" style="margin-top:12px;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="packing">
+    <div class="section-title">行李清單</div>
+    <div class="section-sub">可直接勾選，會記住進度。</div>
+    <div class="card" style="padding:14px; margin-top:12px;">
+      <div class="row">
+        <div style="font-weight:900;">準備進度</div>
+        <div id="packingProgressText" class="small">0 / 0</div>
+      </div>
+      <div class="progress" style="margin-top:10px;"><span id="packingProgressBar"></span></div>
+      <div id="packingFilters" class="filters"></div>
+      <div id="packingList" class="pack-grid" style="margin-top:12px;"></div>
+    </div>
+  </section>
+
+  <section class="section" id="info">
+    <div class="grid-2">
+      <div>
+        <div class="section-title">重要資料</div>
+        <div class="section-sub">酒店、航班、演唱會資訊集中放一頁。</div>
+        <div class="card" style="padding:14px; margin-top:12px;">
+          <div id="infoGrid" class="grid-2"></div>
+        </div>
+      </div>
+      <div>
+        <div class="section-title">救急對話卡</div>
+        <div class="section-sub">句子顯示喺卡上，點一下就可複製。</div>
+        <div id="phraseGroups" class="phrase-groups" style="margin-top:12px;"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<nav class="bottom-nav">
+  <button class="nav-btn active" data-target="home"><div>🏠</div><div>首頁</div></button>
+  <button class="nav-btn" data-target="transport"><div>🚆</div><div>交通</div></button>
+  <button class="nav-btn" data-target="itinerary"><div>🗓️</div><div>行程</div></button>
+  <button class="nav-btn" data-target="packing"><div>🎒</div><div>行李</div></button>
+  <button class="nav-btn" data-target="info"><div>📌</div><div>資料</div></button>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<script>
+const DATA = {"days": [{"sheet": "Apr 9 · Arrival", "title": "🌙 4/9（三）東京到達日　— 羽田 → 六本木", "items": [{"date": "Apr 9", "time": "20:00", "place": "東京羽田機場", "activity": "抵達", "transport": "-", "notes": "預留入境45–60分鐘"}, {"date": "Apr 9", "time": "20:50", "place": "羽田入境大廳", "activity": "取行李＋過關", "transport": "-", "notes": "開手機數據"}, {"date": "Apr 9", "time": "21:00", "place": "羽田機場站", "activity": "購票／用Suica", "transport": "京急線", "notes": "直達大門"}, {"date": "Apr 9", "time": "21:05", "place": "京急線", "activity": "羽田 → 大門", "transport": "約35分鐘", "notes": "無需轉車"}, {"date": "Apr 9", "time": "21:40", "place": "大門站", "activity": "下車轉線", "transport": "步行轉大江戶線", "notes": "指示清楚"}, {"date": "Apr 9", "time": "21:45", "place": "大江戶線", "activity": "大門 → 六本木", "transport": "約10分鐘", "notes": "3站"}, {"date": "Apr 9", "time": "21:55", "place": "六本木站", "activity": "出閘", "transport": "步行約5分鐘", "notes": "看Google Maps"}, {"date": "Apr 9", "time": "22:05", "place": "APA Hotel 六本木", "activity": "Check-in", "transport": "-", "notes": "確認早餐時間"}, {"date": "Apr 9", "time": "22:30", "place": "酒店附近", "activity": "便利店補給", "transport": "步行", "notes": "買水＋早餐"}, {"date": "Apr 9", "time": "23:30", "place": "酒店", "activity": "洗澡休息", "transport": "-", "notes": "設鬧鐘8:00"}]}, {"sheet": "Apr 10 · Tokyo", "title": "🌿 4/10（四）乃木坂＋渋谷＋台場＋展覽日", "items": [{"date": "Apr 10", "time": "08:00", "place": "六本木", "activity": "出門", "transport": "步行→地鐵", "notes": "帶相機"}, {"date": "Apr 10", "time": "08:10", "place": "六本木站", "activity": "大江戶線→青山一丁目", "transport": "地鐵", "notes": "約5分鐘"}, {"date": "Apr 10", "time": "08:20", "place": "青山一丁目", "activity": "轉千代田線→乃木坂", "transport": "地鐵", "notes": "1站"}, {"date": "Apr 10", "time": "08:25–09:00", "place": "乃木坂", "activity": "封面巡禮＋晨光拍攝", "transport": "步行", "notes": "控制45分鐘，人少係關鍵"}, {"date": "Apr 10", "time": "09:10", "place": "乃木坂", "activity": "千代田線→表參道→渋谷", "transport": "地鐵", "notes": "約10分鐘"}, {"date": "Apr 10", "time": "10:00–11:00", "place": "SHIBUYA109", "activity": "★ サクラミーツカフェ", "transport": "步行", "notes": "早去避人！限定グッズ"}, {"date": "Apr 10", "time": "11:05–11:50", "place": "Tower Records 渋谷", "activity": "CD＋雜誌", "transport": "步行", "notes": "設鬧鐘"}, {"date": "Apr 10", "time": "12:00–12:40", "place": "渋谷", "activity": "拉麵午餐", "transport": "步行", "notes": "簡單食飽"}, {"date": "Apr 10", "time": "12:45–13:20", "place": "Pokémon Center（PARCO 11F）", "activity": "逛店", "transport": "步行", "notes": "PARCO 11F"}, {"date": "Apr 10", "time": "13:25–14:00", "place": "GALLERY X BY PARCO（PARCO B1F）", "activity": "★ TAPPEI WORLD 免費展", "transport": "步行落B1F", "notes": "同一棟！11:00-21:00，免費入場"}, {"date": "Apr 10", "time": "14:00–14:45", "place": "渋谷十字路口＋宮下公園", "activity": "城市攝影", "transport": "步行", "notes": "天橋俯拍人潮"}, {"date": "Apr 10", "time": "15:00", "place": "渋谷站", "activity": "JR山手線→新橋→台場", "transport": "JR+輕軌", "notes": "約30分鐘"}, {"date": "Apr 10", "time": "15:30–16:30", "place": "獨角獸高達", "activity": "拍攝＋觀看", "transport": "步行", "notes": "童年完成 🤖"}, {"date": "Apr 10", "time": "16:45", "place": "台場", "activity": "返六本木", "transport": "輕軌+地鐵", "notes": ""}, {"date": "Apr 10", "time": "17:30", "place": "六本木", "activity": "晚餐", "transport": "步行", "notes": "食飽先去展覽"}, {"date": "Apr 10", "time": "19:00–21:00", "place": "六本木 Hills 展望台", "activity": "★ 星空×漫畫展《地。》", "transport": "步行約5分鐘", "notes": "海拔250m夜景！10:00-22:00，需購票"}, {"date": "Apr 10", "time": "21:30", "place": "酒店", "activity": "返回休息", "transport": "-", "notes": "設鬧鐘早起"}]}, {"sheet": "Apr 11 · Concert Day 1", "title": "🌸 4/11（五）グッズ＋三麗鷗展＋演唱會 Day 1", "items": [{"date": "Apr 11", "time": "07:30", "place": "新國立競技場", "activity": "排グッズ", "transport": "地鐵", "notes": "早到！帶現金¥15,000+"}, {"date": "Apr 11", "time": "10:00", "place": "場館", "activity": "買完グッズ", "transport": "-", "notes": "coin locker寄低，輕身行"}, {"date": "Apr 11", "time": "10:30–12:00", "place": "六本木 Hills 森大廈", "activity": "★ 三麗鷗60週年展 FINAL", "transport": "步行約5分鐘", "notes": "平日10:00-18:00，免費？需確認票價"}, {"date": "Apr 11", "time": "12:00–13:00", "place": "六本木附近", "activity": "午餐", "transport": "步行", "notes": "坐低休息"}, {"date": "Apr 11", "time": "13:30", "place": "外苑いちょう並木", "activity": "銀杏大道攝影", "transport": "地鐵", "notes": "青葉版，建築感強"}, {"date": "Apr 11", "time": "14:30", "place": "表參道", "activity": "城市攝影", "transport": "銀座線", "notes": "欅樹大道"}, {"date": "Apr 11", "time": "15:30", "place": "APA酒店", "activity": "返去換衫整理", "transport": "-", "notes": "補水"}, {"date": "Apr 11", "time": "16:00", "place": "六本木站", "activity": "出發去新國立", "transport": "地鐵", "notes": "預留安檢時間"}, {"date": "Apr 11", "time": "16:30", "place": "新國立競技場", "activity": "入場", "transport": "-", "notes": "確認座位，場內グッズ"}, {"date": "Apr 11", "time": "17:30", "place": "新國立競技場", "activity": "🌸 演唱會開演！", "transport": "-", "notes": "全力享受"}, {"date": "Apr 11", "time": "21:00", "place": "六本木", "activity": "夜散步", "transport": "步行", "notes": "輕鬆收工"}]}, {"sheet": "Apr 12 · Concert Day 2", "title": "🎪 4/12（六）秋葉原＋演唱會 Day 2＋Shibuya Sky", "items": [{"date": "Apr 12", "time": "07:30", "place": "新國立競技場", "activity": "排グッズ（如需要）", "transport": "地鐵", "notes": "第二日隊通常短啲"}, {"date": "Apr 12", "time": "10:00", "place": "場館", "activity": "買完", "transport": "-", "notes": "coin locker寄低"}, {"date": "Apr 12", "time": "11:00", "place": "六本木站", "activity": "大江戶線→御徒町", "transport": "地鐵", "notes": ""}, {"date": "Apr 12", "time": "11:30–13:30", "place": "秋葉原", "activity": "生寫真＋CD舖", "transport": "步行", "notes": "Tower Records / Animate / まんだらけ"}, {"date": "Apr 12", "time": "13:30", "place": "秋葉原附近", "activity": "午餐", "transport": "步行", "notes": ""}, {"date": "Apr 12", "time": "14:30", "place": "秋葉原站", "activity": "返六本木酒店", "transport": "地鐵", "notes": "換衫休息"}, {"date": "Apr 12", "time": "15:30", "place": "APA酒店", "activity": "整理補水", "transport": "-", "notes": ""}, {"date": "Apr 12", "time": "16:00", "place": "六本木站", "activity": "出發去新國立", "transport": "地鐵", "notes": ""}, {"date": "Apr 12", "time": "16:30", "place": "新國立競技場", "activity": "入場", "transport": "-", "notes": ""}, {"date": "Apr 12", "time": "17:30", "place": "新國立競技場", "activity": "🌸 演唱會 Day 2 開演！", "transport": "-", "notes": "最後一場全力衝"}, {"date": "Apr 12", "time": "20:45–21:45", "place": "Shibuya Sky", "activity": "夜景攝影", "transport": "地鐵", "notes": "記得提前預約！"}]}, {"sheet": "Apr 13 · Tokyo → Atami", "title": "🌊 4/13（日）東京 → 熱海移動日", "items": [{"date": "Apr 13", "time": "07:30", "place": "六本木", "activity": "出發", "transport": "地鐵", "notes": "行李check-out或寄存"}, {"date": "Apr 13", "time": "08:15–09:15", "place": "東京站紅磚站舍", "activity": "城市攝影", "transport": "-", "notes": "經典建築打卡"}, {"date": "Apr 13", "time": "10:00", "place": "東京站", "activity": "JR東海道線→熱海", "transport": "JR普通", "notes": "約1小時40分"}, {"date": "Apr 13", "time": "11:40", "place": "熱海站", "activity": "Prince Smart Inn Check-in", "transport": "步行", "notes": "放行李換衫"}, {"date": "Apr 13", "time": "13:00", "place": "来宮神社", "activity": "2000年大楠樹攝影", "transport": "JR1站或步行20分", "notes": "氣場極強，早去人少"}, {"date": "Apr 13", "time": "14:30", "place": "熱海城", "activity": "俯瞰熱海灣", "transport": "巴士", "notes": "昭和感建築＋全景"}, {"date": "Apr 13", "time": "16:30", "place": "お宮の松＋海岸", "activity": "黃昏海岸攝影", "transport": "步行", "notes": "黃昏光打落海面最靚"}, {"date": "Apr 13", "time": "18:30", "place": "熱海銀座", "activity": "海鮮晚餐", "transport": "-", "notes": "金目鯛、海膽必試"}]}, {"sheet": "Apr 14 · Izu Coast", "title": "⛰️ 4/14（一）大室山＋城ヶ崎海岸", "items": [{"date": "Apr 14", "time": "08:40", "place": "熱海站", "activity": "JR→伊豆高原", "transport": "伊豆急行", "notes": "約50分鐘"}, {"date": "Apr 14", "time": "09:30", "place": "伊豆高原駅", "activity": "轉巴士去大室山", "transport": "巴士", "notes": "駅前發車，約15分鐘"}, {"date": "Apr 14", "time": "10:00–11:30", "place": "大室山", "activity": "吊車＋火山口步道攝影", "transport": "（巴士抵達）", "notes": "天晴可望富士山，廣角必拍"}, {"date": "Apr 14", "time": "11:45", "place": "大室山", "activity": "巴士返伊豆高原駅", "transport": "巴士", "notes": ""}, {"date": "Apr 14", "time": "12:05", "place": "城ヶ崎海岸駅", "activity": "伊豆急1站→城ヶ崎海岸駅", "transport": "伊豆急行", "notes": "約5分鐘，無人站"}, {"date": "Apr 14", "time": "12:30–15:30", "place": "城ヶ崎海岸", "activity": "熔岩斷崖＋吊橋攝影", "transport": "步行25分（駅→海岸）", "notes": "coin locker寄行李，輕身拍攝！斷崖＋海蝕洞係名片級畫面"}, {"date": "Apr 14", "time": "15:50", "place": "城ヶ崎海岸駅", "activity": "普通列車→熱海", "transport": "伊豆急行", "notes": "約55分鐘"}, {"date": "Apr 14", "time": "16:45", "place": "熱海站", "activity": "返回", "transport": "步行", "notes": ""}, {"date": "Apr 14", "time": "18:30", "place": "熱海", "activity": "晚餐＋生啤", "transport": "-", "notes": "不續杯 😄"}]}, {"sheet": "Apr 15 · Atami → Yokohama", "title": "🎡 4/15（二）熱海 → 橫濱", "items": [{"date": "Apr 15", "time": "10:00–12:00", "place": "MOA美術館", "activity": "參觀", "transport": "巴士", "notes": "熱海站有接駁巴士"}, {"date": "Apr 15", "time": "12:30", "place": "熱海站", "activity": "Check-out + JR→橫濱", "transport": "JR", "notes": "約1小時10分直達"}, {"date": "Apr 15", "time": "14:00", "place": "相鉄フレッサイン 横浜桜木町", "activity": "Check-in", "transport": "步行", "notes": "15:00 起入住"}, {"date": "Apr 15", "time": "14:30–17:00", "place": "橫濱市內", "activity": "逛街＋買手信", "transport": "步行", "notes": "Landmark Plaza、そごう、中華街"}, {"date": "Apr 15", "time": "17:00–18:30", "place": "紅磚倉庫＋大棧橋", "activity": "黃昏＋夜景攝影", "transport": "步行", "notes": "Magic Hour 日落後20分最靚，唔好錯過"}, {"date": "Apr 15", "time": "19:00", "place": "Minato Mirai", "activity": "晚餐＋夜景", "transport": "步行", "notes": ""}]}, {"sheet": "Apr 16 · Yokohama → Haneda", "title": "✈️ 4/16（三）橫濱 → 羽田回程", "items": [{"date": "Apr 16", "time": "07:30", "place": "相鉄フレッサイン 横浜桜木町", "activity": "由酒店出發去橫濱海港晨拍", "transport": "步行", "notes": "11:00前退房，可先寄存或直接帶行李出發"}, {"date": "Apr 16", "time": "09:00", "place": "橫濱站附近", "activity": "補買手信", "transport": "步行", "notes": "未買齊最後機會"}, {"date": "Apr 16", "time": "11:00", "place": "橫濱站", "activity": "京急→羽田", "transport": "京急", "notes": "約25分鐘，最遲11:00出發｜由相鉄フレッサイン 横浜桜木町出發"}, {"date": "Apr 16", "time": "12:00", "place": "羽田機場", "activity": "辦理登機", "transport": "-", "notes": "中午機，提前3小時"}, {"date": "Apr 16", "time": "15:40", "place": "羽田機場", "activity": "✈ 起飛！一路順風", "transport": "-", "notes": ""}]}], "packing": [{"category": "證件", "item": "護照", "qty": "1", "status": "☐", "notes": "有效期確認"}, {"category": "證件", "item": "機票電子檔", "qty": "1", "status": "☐", "notes": "截圖備份"}, {"category": "證件", "item": "演唱會電子票", "qty": "1", "status": "☐", "notes": "充滿電確認"}, {"category": "財務", "item": "Suica交通卡", "qty": "1", "status": "☐", "notes": "預存¥8,000+"}, {"category": "財務", "item": "日圓現金", "qty": "¥80,000", "status": "☐", "notes": "分開放，演唱會¥20,000獨立"}, {"category": "財務", "item": "信用卡", "qty": "1", "status": "☐", "notes": "通知銀行出行"}, {"category": "電子", "item": "手機", "qty": "1", "status": "☐", "notes": "eSIM已啟用"}, {"category": "電子", "item": "充電器", "qty": "1", "status": "☐", "notes": "Type A插頭轉換器"}, {"category": "電子", "item": "行動電源", "qty": "1", "status": "☐", "notes": "滿電，注意演唱會入場規定"}, {"category": "電子", "item": "相機", "qty": "1", "status": "☐", "notes": "記憶卡清空"}, {"category": "電子", "item": "相機電池", "qty": "2", "status": "☐", "notes": "充滿"}, {"category": "電子", "item": "相機備用記憶卡", "qty": "1", "status": "☐", "notes": "建議帶2張"}, {"category": "服裝", "item": "外套", "qty": "1", "status": "☐", "notes": "早晚冷，大室山用"}, {"category": "服裝", "item": "舒服波鞋", "qty": "1", "status": "☐", "notes": "已穿過避磨腳"}, {"category": "服裝", "item": "襪子", "qty": "4–5雙", "status": "☐", "notes": "多帶一雙"}, {"category": "服裝", "item": "睡衣", "qty": "1", "status": "☐", "notes": "酒店通常有備"}, {"category": "服裝", "item": "演唱會outfit", "qty": "1", "status": "☐", "notes": "確認應援顏色"}, {"category": "衛生", "item": "牙刷牙膏", "qty": "1", "status": "☐", "notes": "酒店有備"}, {"category": "衛生", "item": "常用藥", "qty": "一套", "status": "☐", "notes": "感冒藥/止痛藥/腸胃藥"}, {"category": "其他", "item": "可摺購物袋", "qty": "1", "status": "☐", "notes": "秋葉原/手信用"}, {"category": "其他", "item": "小背包", "qty": "1", "status": "☐", "notes": "演唱會日用"}, {"category": "其他", "item": "水壺", "qty": "1", "status": "☐", "notes": "可帶可不帶"}, {"category": "其他", "item": "耳機", "qty": "1", "status": "☐", "notes": "飛機用"}, {"category": "其他", "item": "雨傘", "qty": "1", "status": "☐", "notes": "摺疊式，4月偶有雨"}], "info": [{"item": "出發日期", "value": "2026年4月9日", "notes": "廣州→羽田"}, {"item": "回程日期", "value": "2026年4月16日 15:40起飛", "notes": "記得早3小時到機場"}, {"item": "東京酒店", "value": "APA Hotel & Resort Roppongi Ekihigashi", "notes": "4月9-13日"}, {"item": "熱海酒店", "value": "Prince Smart Inn Atami", "notes": "4月13-14日（2晚）"}, {"item": "橫濱酒店", "value": "（待填）", "notes": "4月15日（1晚）"}, {"item": "演唱會", "value": "櫻坂46 五週年 新國立競技場", "notes": "4月11-12日 17:30開演"}, {"item": "入場時間", "value": "15:00", "notes": "確認顏認証完成"}, {"item": "日本報警", "value": "110", "notes": "-"}, {"item": "日本急救", "value": "119", "notes": "-"}, {"item": "羽田→六本木", "value": "京急線→品川→都營淺草線→大門→大江戶線→六本木", "notes": "約50分鐘"}, {"item": "橫濱→羽田", "value": "京急線", "notes": "約25分鐘"}, {"item": "熱海→掛川", "value": "新幹線 Kodama/Hikari", "notes": "約40分鐘"}, {"item": "掛川→新橫濱", "value": "新幹線", "notes": "約50分鐘"}, {"item": "eSIM/電話卡", "value": "（待填）", "notes": "出發前啟用"}, {"item": "緊急現金", "value": "分開放，¥20,000備用", "notes": "-"}], "phrases": [{"group": "🏨 酒店 Check-in / Check-out", "items": [{"scene": "Check-in", "zh": "我預訂了房間", "ja": "予約した○○です。", "romaji": "Yoyaku shita __ desu"}, {"scene": "Check-in", "zh": "辦理入住", "ja": "チェックインをお願いします。", "romaji": "Chekkuin o onegaishimasu"}, {"scene": "Check-in", "zh": "Wi-Fi密碼是什麼？", "ja": "Wi-Fiのパスワードを教えてください。", "romaji": "Wi-Fi no pasuwādo o oshiete kudasai"}, {"scene": "Check-in", "zh": "退房時間是幾點？", "ja": "チェックアウトは何時ですか？", "romaji": "Chekkuauto wa nanji desu ka"}, {"scene": "Check-out", "zh": "辦理退房", "ja": "チェックアウトをお願いします。", "romaji": "Chekkuauto o onegaishimasu"}, {"scene": "Check-out", "zh": "可以寄存行李嗎？", "ja": "荷物を預かってもらえますか？", "romaji": "Nimotsu o azukatte moraemasu ka"}, {"scene": "Check-out", "zh": "請給我收據", "ja": "領収書をください。", "romaji": "Ryōshūsho o kudasai"}, {"scene": "客房問題", "zh": "空調壞了", "ja": "エアコンが動きません。", "romaji": "Eakon ga ugokimasen"}, {"scene": "客房問題", "zh": "沒有熱水", "ja": "お湯が出ません。", "romaji": "Oyu ga demasen"}, {"scene": "客房問題", "zh": "網路連不上", "ja": "インターネットがつながりません。", "romaji": "Intānetto ga tsunagarimasen"}]}, {"group": "🍣 餐廳點餐", "items": [{"scene": "入座", "zh": "一個人", "ja": "一人です。", "romaji": "Hitori desu"}, {"scene": "入座", "zh": "兩個人", "ja": "二人です。", "romaji": "Futari desu"}, {"scene": "點餐", "zh": "請給我這個（指菜單）", "ja": "これをください。", "romaji": "Kore o kudasai"}, {"scene": "點餐", "zh": "有什麼推薦？", "ja": "おすすめは何ですか？", "romaji": "Osusume wa nan desu ka"}, {"scene": "點餐", "zh": "請給我水", "ja": "お水をください。", "romaji": "Omizu o kudasai"}, {"scene": "結帳", "zh": "請結帳", "ja": "お会計をお願いします。", "romaji": "Okaikei o onegaishimasu"}, {"scene": "結帳", "zh": "可以刷卡嗎？", "ja": "カードで払えますか？", "romaji": "Kādo de haraemasu ka"}, {"scene": "過敏", "zh": "我有過敏（指食材）", "ja": "これはアレルギーがあります。", "romaji": "Kore wa arerugī ga arimasu"}, {"scene": "稱讚", "zh": "好吃！", "ja": "おいしい！", "romaji": "Oishii"}]}, {"group": "🚆 交通問路", "items": [{"scene": "問路", "zh": "○○站在哪裡？", "ja": "○○駅はどこですか？", "romaji": "__ eki wa doko desu ka"}, {"scene": "問路", "zh": "我想去○○", "ja": "○○に行きたいです。", "romaji": "__ ni ikitai desu"}, {"scene": "問路", "zh": "我迷路了", "ja": "迷子になりました。", "romaji": "Maigo ni narimashita"}, {"scene": "問路", "zh": "請在地圖指給我看", "ja": "地図で教えてください。", "romaji": "Chizu de oshiete kudasai"}, {"scene": "買票", "zh": "去○○一張票", "ja": "○○まで一枚ください。", "romaji": "__ made ichimai kudasai"}, {"scene": "巴士", "zh": "這巴士去○○嗎？", "ja": "このバスは○○に行きますか？", "romaji": "Kono basu wa __ ni ikimasu ka"}, {"scene": "的士", "zh": "請去○○", "ja": "○○までお願いします。", "romaji": "__ made onegaishimasu"}]}, {"group": "🛍️ 購物", "items": [{"scene": "問價", "zh": "這個多少錢？", "ja": "いくらですか？", "romaji": "Ikura desu ka"}, {"scene": "試穿", "zh": "可以試穿嗎？", "ja": "試着してもいいですか？", "romaji": "Shichaku shite mo ii desu ka"}, {"scene": "尺碼", "zh": "有大號嗎？", "ja": "大きいサイズはありますか？", "romaji": "Ōkii saizu wa arimasu ka"}, {"scene": "退稅", "zh": "可以退稅嗎？", "ja": "免税できますか？", "romaji": "Menzei dekimasu ka"}, {"scene": "裝袋", "zh": "請裝袋", "ja": "袋に入れてください。", "romaji": "Fukuro ni irete kudasai"}, {"scene": "結帳", "zh": "我要買這個", "ja": "これをください。", "romaji": "Kore o kudasai"}]}, {"group": "🌸 演唱會場館", "items": [{"scene": "グッズ", "zh": "グッズ販售在哪裡？", "ja": "グッズ売り場はどこですか？", "romaji": "Guzzu uriba wa doko desu ka"}, {"scene": "グッズ", "zh": "請給我這個（指catalogue）", "ja": "これをください。", "romaji": "Kore o kudasai"}, {"scene": "入場", "zh": "請問入口在哪裡？", "ja": "入口はどこですか？", "romaji": "Iriguchi wa doko desu ka"}, {"scene": "入場", "zh": "我的座位在哪裡？", "ja": "私の席はどこですか？", "romaji": "Watashi no seki wa doko desu ka"}, {"scene": "寄存", "zh": "寄物處在哪裡？", "ja": "コインロッカーはどこですか？", "romaji": "Koin rokkā wa doko desu ka"}, {"scene": "廁所", "zh": "廁所在哪裡？", "ja": "トイレはどこですか？", "romaji": "Toire wa doko desu ka"}]}, {"group": "🆘 緊急情況", "items": [{"scene": "求助", "zh": "請幫幫我！", "ja": "助けてください！", "romaji": "Tasukete kudasai"}, {"scene": "求助", "zh": "我不懂日語", "ja": "日本語がわかりません。", "romaji": "Nihongo ga wakarimasen"}, {"scene": "求助", "zh": "請叫救護車", "ja": "救急車を呼んでください。", "romaji": "Kyūkyūsha o yonde kudasai"}, {"scene": "求助", "zh": "請叫警察", "ja": "警察を呼んでください。", "romaji": "Keisatsu o yonde kudasai"}, {"scene": "求助", "zh": "我的錢包被偷了", "ja": "財布を盗まれました。", "romaji": "Saifu o nusumaremashita"}, {"scene": "求助", "zh": "我感覺不舒服", "ja": "気分が悪いです。", "romaji": "Kibun ga warui desu"}, {"scene": "求助", "zh": "請帶我去醫院", "ja": "病院に連れて行ってください。", "romaji": "Byōin ni tsurete itte kudasai"}]}, {"group": "😊 萬用句", "items": [{"scene": "禮貌", "zh": "不好意思（叫人）", "ja": "すみません。", "romaji": "Sumimasen"}, {"scene": "禮貌", "zh": "謝謝", "ja": "ありがとうございます。", "romaji": "Arigatō gozaimasu"}, {"scene": "禮貌", "zh": "對不起", "ja": "ごめんなさい。", "romaji": "Gomennasai"}, {"scene": "禮貌", "zh": "請多關照", "ja": "よろしくお願いします。", "romaji": "Yoroshiku onegaishimasu"}, {"scene": "回應", "zh": "好的／明白", "ja": "わかりました。", "romaji": "Wakarimashita"}, {"scene": "回應", "zh": "不明白", "ja": "わかりません。", "romaji": "Wakarimasen"}, {"scene": "回應", "zh": "請再說一次", "ja": "もう一度言ってください。", "romaji": "Mō ichido itte kudasai"}, {"scene": "回應", "zh": "請說慢一點", "ja": "ゆっくり話してください。", "romaji": "Yukkuri hanashite kudasai"}]}, {"group": "📸 請人幫忙影相", "items": [{"scene": "開口", "zh": "不好意思，可以幫我拍照嗎？", "ja": "すみません、写真を撮っていただけますか？", "romaji": "Sumimasen, shashin o totte itadakemasu ka?"}, {"scene": "指示", "zh": "按這裡就可以了", "ja": "ここを押してください。", "romaji": "Koko o oshite kudasai"}, {"scene": "指示", "zh": "可以幫我拍幾張嗎？", "ja": "何枚か撮っていただけますか？", "romaji": "Nanmai ka totte itadakemasu ka?"}, {"scene": "指示", "zh": "可以橫拍嗎？", "ja": "横向きで撮っていただけますか？", "romaji": "Yokomuki de totte itadakemasu ka?"}, {"scene": "完成", "zh": "非常感謝！", "ja": "ありがとうございます！", "romaji": "Arigatō gozaimasu!"}]}, {"group": "☕ 咖啡館點餐", "items": [{"scene": "點熱咖啡", "zh": "請給我一杯熱咖啡", "ja": "ホットコーヒーをひとつください。", "romaji": "Hotto kōhī o hitotsu kudasai"}, {"scene": "點凍咖啡", "zh": "請給我一杯冰咖啡", "ja": "アイスコーヒーをひとつください。", "romaji": "Aisu kōhī o hitotsu kudasai"}, {"scene": "點拿鐵", "zh": "請給我一杯拿鐵", "ja": "カフェラテをひとつください。", "romaji": "Kafe rate o hitotsu kudasai"}, {"scene": "加牛奶", "zh": "請加牛奶", "ja": "ミルクをください。", "romaji": "Miruku o kudasai"}, {"scene": "不要糖", "zh": "不加糖", "ja": "砂糖なしでお願いします。", "romaji": "Satō nashi de onegaishimasu"}, {"scene": "堂食", "zh": "在這裡喝", "ja": "こちらで飲みます。", "romaji": "Kochira de nomimasu"}, {"scene": "外帶", "zh": "外帶", "ja": "テイクアウトでお願いします。", "romaji": "Teikuauto de onegaishimasu"}]}], "photoGuide": [{"group": "🗼 東京 — 城市建築", "items": [{"spot": "乃木坂封面巡禮", "date": "4/10", "bestTime": "08:00–09:00 晨光", "lens": "35–50mm", "tips": "仿照封面構圖，注意光源方向；人少係關鍵，8點前到", "notes": "清晨側光令建築立體感強"}, {"spot": "渋谷十字路口", "date": "4/10", "bestTime": "13:00–14:00", "lens": "28mm廣角", "tips": "天橋俯拍人潮，快門1/250以上凍住人流；或慢快門拍光軌", "notes": "宮下公園天橋係最佳位置"}, {"spot": "台場獨角獸高達", "date": "4/10", "bestTime": "15:00–16:00", "lens": "28–35mm仰拍", "tips": "低角度仰拍誇張高達體積感；配合藍天效果最好", "notes": "表演時間留意官網"}, {"spot": "東京站紅磚站舍", "date": "4/13", "bestTime": "08:15–09:00 晨光", "lens": "28–35mm", "tips": "正面對稱構圖，早上人少；廣角拍全景，50mm拍磚牆細節", "notes": "清晨光線打落紅磚最靚"}, {"spot": "外苑いちょう並木", "date": "4/11", "bestTime": "10:30–11:30", "lens": "50–70mm長焦", "tips": "長焦壓縮銀杏大道透視感，兩排樹夾住消失點", "notes": "4月係青葉版，秋天更震撼"}, {"spot": "明治神宮", "date": "4/11", "bestTime": "14:00–15:30", "lens": "28–35mm", "tips": "鳥居用廣角拍高大感；參道兩側大樹用28mm捕捉壓迫感", "notes": "森林光線柔和，唔需要特定時間"}]}, {"group": "🌸 東京 — 夜景", "items": [{"spot": "六本木夜景 / 東京鐵塔", "date": "4/9,13", "bestTime": "21:00–22:00", "lens": "28–50mm", "tips": "仰拍鐵塔用廣角；ISO 3200–6400，f/2.8，快門1/60", "notes": "A7III 高感強，手持夜拍完全ok"}, {"spot": "Shibuya Sky 夜景", "date": "4/12", "bestTime": "20:45–21:45", "lens": "28mm廣角", "tips": "屋頂360度全景；廣角捕捉城市延伸感，需提前網上預約", "notes": "建議Magic Hour 日落後30分最靚"}, {"spot": "橫濱 Minato Mirai", "date": "4/15", "bestTime": "19:00–20:30", "lens": "28–50mm", "tips": "紅磚倉庫前景配摩天輪；大棧橋俯瞰夜港，Magic Hour必拍", "notes": "日落後藍調時刻約20分鐘，唔好錯過"}]}, {"group": "🌊 熱海 — 海岸城市", "items": [{"spot": "熱海海岸 お宮の松", "date": "4/13", "bestTime": "16:30–18:00 黃昏", "lens": "50–70mm長焦", "tips": "長焦壓縮海平線，黃昏逆光拍剪影效果；松樹做前景框住海景", "notes": "黃昏光打落海面係最靚一刻"}, {"spot": "熱海銀座商店街", "date": "4/13,15", "bestTime": "下午任何時間", "lens": "35–50mm", "tips": "昭和風招牌、舊式店鋪；街拍用50mm自然視角，留意光影細節", "notes": "保持低調，唔好打擾店主"}, {"spot": "来宮神社大楠樹", "date": "4/13", "bestTime": "13:00–14:30", "lens": "28mm廣角仰拍", "tips": "大樹用超廣角仰拍展示樹冠龐大感；光線穿透樹葉嘅丁達爾效果", "notes": "樹下光線複雜，用點測光"}, {"spot": "熱海城俯瞰", "date": "4/13", "bestTime": "14:30–16:00", "lens": "28–35mm", "tips": "廣角拍熱海灣全景；長焦70mm壓縮遠處島嶼同海面層次", "notes": "天晴效果最好，留意天氣"}, {"spot": "大室山山頂", "date": "4/14", "bestTime": "09:30–11:00", "lens": "28mm", "tips": "火山口圓形構圖，廣角拍360度伊豆全景；天晴可見富士山用70mm", "notes": "早上霧少，光線清晰"}]}, {"group": "🎡 橫濱 — 港口城市", "items": [{"spot": "紅磚倉庫", "date": "4/15,16", "bestTime": "黃昏17:00 / 早上07:30", "lens": "28–50mm", "tips": "倉庫正面對稱構圖；黃昏逆光拍剪影；早上人少光靚拍建築細節", "notes": "早上07:30基本無人，最佳時機"}, {"spot": "大棧橋", "date": "4/15", "bestTime": "日落前後 Magic Hour", "lens": "28–50mm", "tips": "俯瞰橫濱港全景；木板地配大海構圖；長焦壓縮遠處 MM21 摩天輪", "notes": "木板地紋理係很好的前景元素"}, {"spot": "橫濱中華街", "date": "4/15,16", "bestTime": "下午任何時間", "lens": "35–50mm", "tips": "牌坊前正面構圖；街道人文抓拍；食物特寫用50–70mm微距感", "notes": "人多熱鬧，街拍題材豐富"}]}, {"group": "🌊 城ヶ崎海岸 — 熔岩斷崖", "items": [{"spot": "城ヶ崎吊橋", "date": "Apr 14", "bestTime": "12:30–14:00", "lens": "28mm廣角", "tips": "吊橋做前景，遠處斷崖配大海；低角度拍橋板木紋延伸感", "notes": "風大注意穩定，用快門1/500+"}, {"spot": "熔岩斷崖海岸線", "date": "Apr 14", "bestTime": "13:00–15:00", "lens": "28–50mm", "tips": "廣角拍斷崖全景；50mm拍海浪打岩石瞬間，快門1/1000凍住水花", "notes": "退潮時可以走近岩石，漲潮注意安全"}, {"spot": "海蝕洞", "date": "Apr 14", "bestTime": "12:30–15:30", "lens": "28mm廣角", "tips": "站洞口向外拍，用洞口框住海景；光比大，建議包圍曝光或HDR", "notes": "部分洞口需要彎腰進入，小心"}, {"spot": "斷崖步道全景", "date": "Apr 14", "bestTime": "14:00–15:30 下午光", "lens": "28–35mm", "tips": "步道高點俯瞰整段海岸線；黑色熔岩配藍海係最強對比", "notes": "步道約4km，量力而為"}]}]};
+const ROUTES = [{"day": 0, "label": "羽田機場 → 六本木酒店", "from": "羽田空港第3ターミナル駅", "to": "六本木駅", "type": "京急 + 都營地鐵", "approx": "約 45–55 分鐘", "via": "京急線 → 大門 → 都営大江戸線", "notes": "落機後第一段。若行李多，可以順手比較機場巴士或的士。", "jrLink": ""}, {"day": 1, "label": "六本木 → 乃木坂", "from": "六本木駅", "to": "乃木坂駅", "type": "東京地鐵", "approx": "約 10–15 分鐘", "via": "都営大江戸線 / 東京メトロ千代田線", "notes": "晨拍用，建議前一晚先存好站名。", "jrLink": ""}, {"day": 1, "label": "乃木坂 → 渋谷", "from": "乃木坂駅", "to": "渋谷駅", "type": "東京地鐵", "approx": "約 10–15 分鐘", "via": "千代田線 → 表參道 → 半藏門線 / 副都心線", "notes": "渋谷站出口多，Google Maps 幫你揀出口會比較方便。", "jrLink": ""}, {"day": 1, "label": "渋谷 → 台場（獨角獸高達）", "from": "渋谷駅", "to": "台場駅", "type": "JR + 百合海鷗線", "approx": "約 30–40 分鐘", "via": "JR山手線 → 新橋 → ゆりかもめ", "notes": "台場段班次密，主要留意轉新橋時行幾遠。", "jrLink": "east"}, {"day": 1, "label": "台場 → 六本木", "from": "台場駅", "to": "六本木駅", "type": "百合海鷗線 + 地鐵", "approx": "約 30–40 分鐘", "via": "ゆりかもめ → 新橋 / 汐留 → 地鐵", "notes": "睇完高達返市區，通常直接用 Google Maps 最快。", "jrLink": ""}, {"day": 2, "label": "六本木 ↔ 國立競技場", "from": "六本木駅", "to": "国立競技場駅", "type": "都營地鐵", "approx": "約 10–15 分鐘", "via": "都営大江戸線 直達附近", "notes": "演唱會日建議預早出發，避開臨近開場人流。", "jrLink": ""}, {"day": 3, "label": "六本木 → 秋葉原", "from": "六本木駅", "to": "秋葉原駅", "type": "都營地鐵 / JR", "approx": "約 20–30 分鐘", "via": "大江戸線 → 御徒町 / 上野御徒町，再步行或轉 JR", "notes": "你原表寫御徒町，實際可因當天班次選秋葉原站落。", "jrLink": "east"}, {"day": 3, "label": "秋葉原 → 國立競技場", "from": "秋葉原駅", "to": "国立競技場駅", "type": "JR + 地鐵", "approx": "約 25–35 分鐘", "via": "JR中央・總武線 / 山手線 + 都營地鐵", "notes": "Day 2 建議預留安檢同入場時間。", "jrLink": "east"}, {"day": 3, "label": "國立競技場 → Shibuya Sky", "from": "国立競技場駅", "to": "渋谷駅", "type": "都營地鐵 / 東京地鐵", "approx": "約 15–20 分鐘", "via": "都営大江戸線 / 半藏門線 / 副都心線", "notes": "夜景預約時段要預留少少 buffer。", "jrLink": ""}, {"day": 4, "label": "六本木 → 東京站", "from": "六本木駅", "to": "東京駅", "type": "都營地鐵 / JR", "approx": "約 20–30 分鐘", "via": "都營地鐵 → 大手町 / 東京站", "notes": "拖行李建議行少啲樓梯，Google Maps 會較實用。", "jrLink": "east"}, {"day": 4, "label": "東京站 → 熱海", "from": "東京駅", "to": "熱海駅", "type": "JR 東海道線 / 新幹線備選", "approx": "普通車約 1 小時 40 分", "via": "JR東海道線；如想快可另查新幹線班次", "notes": "你原表寫 JR 普通；若臨時想快，可以另外用 JR Central 時刻表查新幹線。", "jrLink": "east_central"}, {"day": 4, "label": "熱海站 → 來宮神社", "from": "熱海駅", "to": "来宮神社", "type": "JR 伊東線 / 步行", "approx": "JR 1 站或步行約 20 分", "via": "熱海 → 来宮", "notes": "呢段用 Google Maps 最方便，比較步行同鐵路。", "jrLink": "east"}, {"day": 5, "label": "熱海 → 伊豆高原", "from": "熱海駅", "to": "伊豆高原駅", "type": "伊豆急行", "approx": "約 50 分鐘", "via": "伊豆急行線", "notes": "屬地方鐵路，Jorudan / NAVITIME 對呢類路線好有用。", "jrLink": ""}, {"day": 5, "label": "伊豆高原站 → 大室山", "from": "伊豆高原駅", "to": "大室山", "type": "東海巴士", "approx": "約 15 分鐘", "via": "駅前巴士", "notes": "巴士班次要即日再查，Google Maps 同 NAVITIME 會較實際。", "jrLink": ""}, {"day": 5, "label": "城ヶ崎海岸 → 熱海", "from": "城ヶ崎海岸駅", "to": "熱海駅", "type": "伊豆急行", "approx": "約 55 分鐘", "via": "伊豆急行線", "notes": "拍完斷崖返程，注意天黑前班次。", "jrLink": ""}, {"day": 6, "label": "熱海 → 橫濱", "from": "熱海駅", "to": "横浜駅", "type": "JR 東海道線", "approx": "約 1 小時 10 分", "via": "JR 東海道線 直達為主", "notes": "如果拖行李，預早上車會舒服啲。", "jrLink": "east"}, {"day": 7, "label": "相鉄フレッサイン 横浜桜木町 → 羽田", "from": "横浜駅", "to": "羽田空港第3ターミナル駅", "type": "京急", "approx": "約 25–35 分鐘", "via": "京急線直通為主", "notes": "由橫濱住宿區出發去機場，建議出發前再查一次即時班次。", "jrLink": ""}];
+const TOOLS = [{"name": "Google Maps 路線", "desc": "最適合你逐段查即時交通、出口、步行距離，同埋酒店 / 景點定位。", "url": "https://www.google.com/maps", "tag": "即時路線"}, {"name": "乘換案內（Jorudan）", "desc": "官方頁面寫明可查日本全國鐵路、飛機路線、所需時間同車費，適合查轉車。 ", "url": "https://world.jorudan.co.jp/mln/en/", "tag": "全國轉乘"}, {"name": "NAVITIME Route Finder", "desc": "可查列車、巴士、步行等路線，並顯示時刻、地圖與轉乘細節。", "url": "https://japantravel.navitime.com/en/area/jp/route/", "tag": "路線 + 地圖"}, {"name": "JR East Timetable", "desc": "JR East 官方英文時刻表頁面，現時顯示使用 2026 年 4 月版資料。", "url": "https://timetables.jreast.co.jp/en/", "tag": "JR 東日本"}, {"name": "JR Central 新幹線時刻", "desc": "JR Central 官方頁面提供 2026-03-14 起的新幹線基本時刻表，適合東京 ↔ 熱海要改坐新幹線時使用。", "url": "https://global.jr-central.co.jp/en/info/timetable/", "tag": "新幹線"}];
+const state = {
+  currentDay: 0,
+  search: "",
+  packingFilter: "全部"
+};
+
+const $ = (sel) => document.querySelector(sel);
+const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+function save(key, value) {
+  localStorage.setItem(key, JSON.stringify(value));
+}
+function load(key, fallback) {
+  try {
+    const raw = localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+function toast(msg) {
+  const t = $("#toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(window.__toastTimer);
+  window.__toastTimer = setTimeout(() => t.classList.remove("show"), 1500);
+}
+function jumpTo(id) {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "start" });
+}
+function mapSearch(query) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+function mapTransit(origin, destination) {
+  return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(origin)}&destination=${encodeURIComponent(destination)}&travelmode=transit`;
+}
+function dayLabel(day) {
+  return (day.items[0] && day.items[0].date) ? day.items[0].date : day.sheet;
+}
+function dayTitleShort(day) {
+  return day.title.replace(/^.[ ]*/, "").replace(/　/g, " ");
+}
+function doneKey(dayIdx, itemIdx) {
+  return `trip_done_${dayIdx}_${itemIdx}`;
+}
+function packingKey(i) {
+  return `packing_done_${i}`;
+}
+function isDone(key) {
+  return load(key, false);
+}
+function toggleDone(key) {
+  save(key, !isDone(key));
+  renderTimeline();
+}
+
+function renderTop() {
+  $("#tripDays").textContent = DATA.days.length;
+  $("#spotCount").textContent = DATA.days.reduce((sum, day) => sum + day.items.length, 0);
+  $("#routeCount").textContent = ROUTES.length;
+  const target = new Date("2026-04-11T17:30:00+09:00").getTime();
+  const diff = target - Date.now();
+  $("#countdownChip").textContent = diff > 0 ? `距 Day 1 仲有 ${Math.floor(diff / 86400000)} 日` : "旅程進行中";
+}
+
+function renderSharedTabs(targetId) {
+  const wrap = document.getElementById(targetId);
+  wrap.innerHTML = "";
+  DATA.days.forEach((day, idx) => {
+    const btn = document.createElement("button");
+    btn.className = "day-tab" + (idx === state.currentDay ? " active" : "");
+    btn.innerHTML = `
+      <div class="date">${dayLabel(day)}</div>
+      <div class="name">${dayTitleShort(day)}</div>
+    `;
+    btn.onclick = () => {
+      state.currentDay = idx;
+      renderAllDayViews();
+    };
+    wrap.appendChild(btn);
+  });
+}
+
+function openTool(url, hint="") {
+  if (hint) toast(hint);
+  window.open(url, "_blank");
+}
+
+function renderTransport() {
+  renderSharedTabs("transportTabs");
+  const day = DATA.days[state.currentDay];
+  const routes = ROUTES.filter(r => r.day === state.currentDay);
+  $("#transportSummary").innerHTML = routes.length
+    ? `<span class="highlight">${routes.length}</span> 段重點交通，建議出發前用 Google Maps / 乘換案內再核對一次班次。`
+    : `呢一日未特別整理獨立交通段，主要以步行或現場微調為主。`;
+
+  const box = $("#routeList");
+  box.innerHTML = "";
+  if (!routes.length) {
+    box.innerHTML = `<div class="route-card"><div class="route-name">今日以步行 / 現場靈活調整為主</div><div class="small" style="margin-top:8px;">你可以直接用上面嘅查班次網站捷徑，或者開 Google Maps 即時搜景點名稱。</div></div>`;
+    return;
+  }
+  routes.forEach(route => {
+    const card = document.createElement("div");
+    card.className = "route-card";
+    const jrButtons = [];
+    if (route.jrLink === "east" || route.jrLink === "east_central") {
+      jrButtons.push(`<button class="mini" data-kind="jre">JR East</button>`);
+    }
+    if (route.jrLink === "east_central") {
+      jrButtons.push(`<button class="mini" data-kind="jrc">JR Central</button>`);
+    }
+    card.innerHTML = `
+      <div class="top">
+        <div>
+          <div class="route-name">${route.label}</div>
+          <div class="small">${route.notes}</div>
+        </div>
+        <div class="soft">🚆 ${route.type}</div>
+      </div>
+      <div class="route-line">
+        <span class="tag">⏱️ ${route.approx}</span>
+        <span class="tag">↔️ ${route.via}</span>
+      </div>
+      <div class="station-hint">查詢用站名：<strong>${route.from}</strong> → <strong>${route.to}</strong></div>
+      <div class="route-actions">
+        <button class="mini primary" data-kind="maps">Google 路線</button>
+        <button class="mini" data-kind="jorudan">乘換案內</button>
+        <button class="mini" data-kind="navitime">NAVITIME</button>
+        ${jrButtons.join("")}
+      </div>
+    `;
+    card.querySelector('[data-kind="maps"]').onclick = () => window.open(mapTransit(route.from, route.to), "_blank");
+    card.querySelector('[data-kind="jorudan"]').onclick = () => openTool('https://world.jorudan.co.jp/mln/en/', `喺乘換案內輸入：${route.from} → ${route.to}`);
+    card.querySelector('[data-kind="navitime"]').onclick = () => openTool('https://japantravel.navitime.com/en/area/jp/route/', `喺 NAVITIME 輸入：${route.from} → ${route.to}`);
+    const jre = card.querySelector('[data-kind="jre"]');
+    if (jre) jre.onclick = () => openTool('https://timetables.jreast.co.jp/en/', '開咗 JR East 官方時刻表');
+    const jrc = card.querySelector('[data-kind="jrc"]');
+    if (jrc) jrc.onclick = () => openTool('https://global.jr-central.co.jp/en/info/timetable/', '開咗 JR Central 新幹線時刻表');
+    box.appendChild(card);
+  });
+}
+
+function renderTools() {
+  const wrap = $("#toolsGrid");
+  wrap.innerHTML = "";
+  TOOLS.forEach(tool => {
+    const el = document.createElement("div");
+    el.className = "tool-card";
+    el.innerHTML = `
+      <div class="soft">${tool.tag}</div>
+      <div class="value">${tool.name}</div>
+      <div class="small" style="margin-top:8px;">${tool.desc}</div>
+      <div class="route-actions"><button class="mini primary">打開</button></div>
+    `;
+    el.querySelector("button").onclick = () => window.open(tool.url, "_blank");
+    wrap.appendChild(el);
+  });
+}
+
+function filterItems() {
+  const q = state.search.trim().toLowerCase();
+  const day = DATA.days[state.currentDay];
+  const items = day.items.map((item, idx) => ({ ...item, idx }));
+  if (!q) return items;
+  return items.filter(item => [item.date, item.time, item.place, item.activity, item.transport, item.notes].join(" ").toLowerCase().includes(q));
+}
+
+function inferQuery(item) {
+  const raw = `${item.place} ${item.activity}`;
+  if (/熱海|来宮|伊豆/i.test(raw)) return `${item.place} 日本`;
+  if (/橫濱|横浜|Minato Mirai/i.test(raw)) return `${item.place} 橫濱 日本`;
+  if (/羽田/i.test(raw)) return `${item.place} 東京 日本`;
+  if (/國立|国立競技場/i.test(raw)) return "国立競技場 東京";
+  return `${item.place} 東京 日本`;
+}
+
+function renderTimeline() {
+  renderSharedTabs("itineraryTabs");
+  const day = DATA.days[state.currentDay];
+  const items = filterItems();
+  const doneCount = day.items.filter((_, idx) => isDone(doneKey(state.currentDay, idx))).length;
+  $("#daySummary").innerHTML = `<span class="highlight">${doneCount}</span> / ${day.items.length} 項已完成`;
+
+  const box = $("#timeline");
+  box.innerHTML = "";
+  if (!items.length) {
+    box.innerHTML = `<div class="item"><div class="main-title">搵唔到相關項目</div><div class="meta">試下換個關鍵字。</div></div>`;
+    return;
+  }
+
+  items.forEach(item => {
+    const key = doneKey(state.currentDay, item.idx);
+    const done = isDone(key);
+    const el = document.createElement("div");
+    el.className = "item" + (done ? " done" : "");
+    el.innerHTML = `
+      <div class="time">${item.time || "時間未填"}</div>
+      <div class="main-title">${item.activity || item.place}</div>
+      <div class="meta">${item.place || "未填地點"}</div>
+      <div class="route-line" style="margin-top:10px;">
+        ${item.transport ? `<span class="tag">🚇 ${item.transport}</span>` : ""}
+        ${item.notes ? `<span class="tag">📝 ${item.notes}</span>` : ""}
+      </div>
+      <div class="item-actions">
+        <button class="mini primary" data-kind="map">Google Maps</button>
+        <button class="mini ${done ? "active" : ""}" data-kind="done">${done ? "已完成" : "標記完成"}</button>
+      </div>
+    `;
+    el.querySelector('[data-kind="map"]').onclick = () => window.open(mapSearch(inferQuery(item)), "_blank");
+    el.querySelector('[data-kind="done"]').onclick = () => {
+      toggleDone(key);
+      renderTimeline();
+    };
+    box.appendChild(el);
+  });
+}
+
+function renderQuickCards() {
+  const cards = [
+    { label: "演唱會場館", value: "国立競技場", note: "4/11–12", q: "国立競技場 東京" },
+    { label: "東京酒店", value: "APA Hotel & Resort Roppongi Ekihigashi", note: "4/9–13", q: "APA Hotel & Resort Roppongi Ekihigashi Tokyo" },
+    { label: "熱海酒店", value: "Prince Smart Inn Atami", note: "4/13–15", q: "Prince Smart Inn Atami" },
+    { label: "橫濱酒店", value: "相鉄フレッサイン 横浜桜木町", note: "4/15（1晚）", q: "Sotetsu Fresa Inn Yokohama Sakuragicho" },
+    { label: "回程機場", value: "羽田空港第3ターミナル", note: "4/16", q: "Haneda Airport Terminal 3" }
+  ];
+  const wrap = $("#quickCards");
+  wrap.innerHTML = "";
+  cards.forEach(c => {
+    const el = document.createElement("div");
+    el.className = "info-card";
+    el.innerHTML = `
+      <div class="label">${c.label}</div>
+      <div class="value">${c.value}</div>
+      <div class="small">${c.note}</div>
+      <div class="route-actions"><button class="mini primary">開地圖</button></div>
+    `;
+    el.querySelector("button").onclick = () => window.open(mapSearch(c.q), "_blank");
+    wrap.appendChild(el);
+  });
+}
+
+function renderPhotoPreview() {
+  const wrap = $("#photoPreview");
+  wrap.innerHTML = "";
+  const picks = [];
+  DATA.photoGuide.forEach(group => group.items.slice(0, 1).forEach(item => picks.push({ group: group.group, ...item })));
+  picks.slice(0, 5).forEach(item => {
+    const el = document.createElement("div");
+    el.className = "photo-card";
+    el.innerHTML = `
+      <div class="small">${item.group}</div>
+      <div class="value">${item.spot}</div>
+      <div class="small">${item.date} · ${item.bestTime} · ${item.lens}</div>
+      <div class="small" style="margin-top:8px;">${item.tips}</div>
+    `;
+    wrap.appendChild(el);
+  });
+}
+
+function renderPacking() {
+  const filters = ["全部", ...new Set(DATA.packing.map(x => x.category))];
+  const filterWrap = $("#packingFilters");
+  filterWrap.innerHTML = "";
+  filters.forEach(f => {
+    const btn = document.createElement("button");
+    btn.className = "filter" + (state.packingFilter === f ? " active" : "");
+    btn.textContent = f;
+    btn.onclick = () => {
+      state.packingFilter = f;
+      renderPacking();
+    };
+    filterWrap.appendChild(btn);
+  });
+
+  const shown = state.packingFilter === "全部" ? DATA.packing : DATA.packing.filter(x => x.category === state.packingFilter);
+  const list = $("#packingList");
+  list.innerHTML = "";
+  shown.forEach(item => {
+    const idx = DATA.packing.indexOf(item);
+    const checked = isDone(packingKey(idx));
+    const row = document.createElement("div");
+    row.className = "packing-item";
+    row.innerHTML = `
+      <label class="checkbox">
+        <input type="checkbox" ${checked ? "checked" : ""} />
+        <div>
+          <div class="label">${item.category} · 數量 ${item.qty}</div>
+          <div class="name">${item.item}</div>
+          <div class="small">${item.notes || ""}</div>
+        </div>
+      </label>
+    `;
+    row.querySelector("input").onchange = (e) => {
+      save(packingKey(idx), e.target.checked);
+      updatePackingProgress();
+    };
+    list.appendChild(row);
+  });
+  updatePackingProgress();
+}
+
+function updatePackingProgress() {
+  const total = DATA.packing.length;
+  const done = DATA.packing.filter((_, i) => isDone(packingKey(i))).length;
+  $("#packingProgressText").textContent = `${done} / ${total}`;
+  $("#packingProgressBar").style.width = `${total ? (done / total) * 100 : 0}%`;
+}
+
+function renderInfo() {
+  const grid = $("#infoGrid");
+  grid.innerHTML = "";
+  DATA.info.forEach(item => {
+    const mapable = /酒店|機場|競技場|站|Hotel|Inn/i.test((item.item || "") + " " + (item.value || ""));
+    const card = document.createElement("div");
+    card.className = "info-card";
+    card.innerHTML = `
+      <div class="label">${item.item}</div>
+      <div class="value">${item.value}</div>
+      <div class="small">${item.notes || ""}</div>
+      ${mapable ? '<div class="route-actions"><button class="mini primary">地圖</button></div>' : ''}
+    `;
+    if (mapable) {
+      card.querySelector("button").onclick = () => window.open(mapSearch((item.value || "") + " 日本"), "_blank");
+    }
+    grid.appendChild(card);
+  });
+}
+
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(() => toast("已複製"));
+  } else {
+    window.prompt("請手動複製以下內容：", text);
+  }
+}
+
+function renderPhrases() {
+  const wrap = $("#phraseGroups");
+  wrap.innerHTML = "";
+  DATA.phrases.forEach(group => {
+    const sec = document.createElement("div");
+    sec.className = "card";
+    sec.style.padding = "14px";
+    sec.innerHTML = `
+      <div class="value" style="margin-top:0;">${group.group}</div>
+      <div class="small">點一下句子即可複製。</div>
+      <div class="phrase-groups" style="margin-top:12px;"></div>
+    `;
+    const inner = sec.querySelector(".phrase-groups");
+    group.items.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "phrase-card";
+      card.innerHTML = `
+        <div class="label">${item.scene}</div>
+        <div class="value" style="font-size:17px;">${item.ja}</div>
+        <div class="small" style="margin-top:8px;">${item.zh}</div>
+        <div class="small" style="margin-top:6px;">${item.romaji}</div>
+      `;
+      card.onclick = () => copyText(item.ja);
+      inner.appendChild(card);
+    });
+    wrap.appendChild(sec);
+  });
+}
+
+function renderAllDayViews() {
+  renderTransport();
+  renderTimeline();
+}
+
+function bindEvents() {
+  $("#searchInput").addEventListener("input", (e) => {
+    state.search = e.target.value;
+    renderTimeline();
+  });
+  $$(".nav-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      $$(".nav-btn").forEach(x => x.classList.remove("active"));
+      btn.classList.add("active");
+      jumpTo(btn.dataset.target);
+    });
+  });
+}
+
+function init() {
+  renderTop();
+  renderTools();
+  renderQuickCards();
+  renderPhotoPreview();
+  renderPacking();
+  renderInfo();
+  renderPhrases();
+  renderAllDayViews();
+  bindEvents();
+}
+
+init();
+</script>
+</body>
+</html>
